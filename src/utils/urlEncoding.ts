@@ -9,9 +9,8 @@ export function isValidCode(code: string | null | undefined): code is string {
 /** Build a shareable result URL using the current origin. */
 export function buildShareUrl(code: string): string {
   const url = new URL(window.location.href);
-  url.pathname = '/result';
-  url.search = `?r=${code.toUpperCase()}`;
-  url.hash = '';
+  url.hash = `#/result?r=${code.toUpperCase()}`;
+  url.search = '';
   return url.toString();
 }
 
